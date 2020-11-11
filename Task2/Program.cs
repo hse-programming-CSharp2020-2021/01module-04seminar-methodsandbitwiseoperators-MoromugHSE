@@ -29,15 +29,45 @@ namespace Task2
     class Program
     {
         // TODO: используйте передачу параметров по ссылке
-        ReadData()
+        static bool ReadData(out int negativeSum, out int negativeAmount)
         {
             // TODO: Прочитать вводимые данные
+            negativeAmount = negativeSum = 0;
+            bool isInputCorrect = true;
+            string s = Console.ReadLine();
+            int cur;
+            while (s != "q" && (isInputCorrect &= int.TryParse(s, out cur)))
+            {
+                if (cur < 0)
+                {
+                    ++negativeAmount;
+                    negativeSum += cur;
+                }
+                s = Console.ReadLine();
+            }
+            return isInputCorrect;
+        }
+
+        private static double FindAverage(int sum, int amount)
+        {
+            if (amount == 0)
+            {
+                return 0.0;
+            }
+            return (double)sum / amount;
         }
 
 
         static void Main(string[] args)
         {
-            Console.WriteLine(/* TODO: вывести результат*/);
+            int negativeSum;
+            int negativeAmount;
+            if (!ReadData(out negativeSum, out negativeAmount))
+            {
+                Console.WriteLine("Ошибка");
+                return;
+            }
+            Console.WriteLine(FindAverage(negativeSum, negativeAmount));
         }
     }
 }

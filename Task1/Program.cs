@@ -1,7 +1,7 @@
 ﻿using System;
 
 /*
- * Пользователь вводит неотрицательные целые (int) числа q и p, такие, что q <= p.
+ * Пользователь вводит неотрицательные целые (uint) числа q и p, такие, что q <= p.
  * Определить все тройки попарно различных целых чисел a, b, c \in [q; p],
  * для которых верно a^2 + b^2 = c^2.
  *
@@ -23,10 +23,10 @@ namespace Task1
 {
     class Program
     {
-        static bool ReadBoundaries(out int q, out int p)
+        static bool ReadBoundaries(out uint q, out uint p)
         {
-            bool isInputCorrect = int.TryParse(Console.ReadLine(), out q);
-            isInputCorrect &= int.TryParse(Console.ReadLine(), out p);
+            bool isInputCorrect = uint.TryParse(Console.ReadLine(), out q);
+            isInputCorrect &= uint.TryParse(Console.ReadLine(), out p);
             if (isInputCorrect && q <= p)
             {
                 return true;
@@ -34,13 +34,13 @@ namespace Task1
             return false;
         }
 
-        static void PrintPythagorasNumbers(int minValue, int maxValue)
+        static void PrintPythagorasNumbers(uint minValue, uint maxValue)
         {
-            for (int a = minValue; a <= maxValue; ++a)
+            for (uint a = minValue; a <= maxValue; ++a)
             {
-                for (int b = a + 1; b <= maxValue; ++b)
+                for (uint b = a + 1; b <= maxValue; ++b)
                 {
-                    for (int c = b + 1; c <= maxValue; ++c)
+                    for (uint c = b + 1; c <= maxValue; ++c)
                     {
                         if (a * a + b * b == c * c)
                         {
@@ -53,7 +53,7 @@ namespace Task1
 
         static void Main(string[] args)
         {
-            if (!ReadBoundaries(out int q, out int p))
+            if (!ReadBoundaries(out uint q, out uint p))
             {
                 Console.WriteLine("Ошибка");
                 return;
