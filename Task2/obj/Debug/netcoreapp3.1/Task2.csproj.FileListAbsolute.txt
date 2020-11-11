@@ -1,0 +1,4 @@
+D:\VS_Projects\HW_4_Templates\01module-04seminar-methodsandbitwiseoperators-MoromugHSE\Task2\obj\Debug\netcoreapp3.1\Task2.csprojAssemblyReference.cache
+D:\VS_Projects\HW_4_Templates\01module-04seminar-methodsandbitwiseoperators-MoromugHSE\Task2\obj\Debug\netcoreapp3.1\Task2.AssemblyInfoInputs.cache
+D:\VS_Projects\HW_4_Templates\01module-04seminar-methodsandbitwiseoperators-MoromugHSE\Task2\obj\Debug\netcoreapp3.1\Task2.AssemblyInfo.cs
+D:\VS_Projects\HW_4_Templates\01module-04seminar-methodsandbitwiseoperators-MoromugHSE\Task2\obj\Debug\netcoreapp3.1\Task2.csproj.CoreCompileInputs.cache
