@@ -39,7 +39,7 @@ namespace Task4
 
         private static int BitSum(uint N, uint M)
         {
-            return (1 << (int)N) | (1 << (int)M);
+            return (1 << (int)N) + (1 << (int)M);
         }
 
         static void Main(string[] args)

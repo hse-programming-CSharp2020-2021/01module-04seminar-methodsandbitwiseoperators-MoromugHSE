@@ -77,6 +77,11 @@ namespace Task2
                 return;
             }
             double aver = FindAverage(negativeSum, negativeAmount);
+            if (Math.Abs(aver - (int)aver) < 1e-8)
+            {
+                Console.WriteLine((int)aver);
+                return;
+            }
             Console.WriteLine($"{aver:.##}");
         }
     }

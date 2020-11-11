@@ -73,9 +73,17 @@ namespace Task3
 
         private static void PrintTabFunction(double a, double b, double c)
         {
-            for (double x = 1; !(x > 2); x += 0.05)
+            for (int i = 0; i < 21; ++i)
             {
-                Console.WriteLine($"{EvalFunction(a, b, c, x):.###}");
+                double cur = EvalFunction(a, b, c, 1 + 0.05*i);
+                if (Math.Abs(cur - (int)cur) < 1e-8)
+                {
+                    Console.WriteLine((int)cur);
+                }
+                else
+                {
+                    Console.WriteLine($"{cur:.###}");
+                }
             }
         }
 
