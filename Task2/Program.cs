@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Threading;
+using System.Globalization;
+using System.IO;
+using System.Text;
 
 /*
  * Пользователь последовательно вводит целые числа.
@@ -29,15 +33,56 @@ namespace Task2
     class Program
     {
         // TODO: используйте передачу параметров по ссылке
-        ReadData()
+        static bool ReadData(out int negativeSum, out int negativeAmount)
         {
             // TODO: Прочитать вводимые данные
+            negativeAmount = negativeSum = 0;
+            bool isInputCorrect = true;
+            string s = Console.ReadLine();
+            //Console.WriteLine(s);
+            int cur;
+            while (negativeSum >= -1000 && s != "q" && (isInputCorrect &= int.TryParse(s, out cur)))
+            {
+                if (cur < 0)
+                {
+                    ++negativeAmount;
+                    negativeSum += cur;
+                }
+                s = Console.ReadLine();
+                //Console.WriteLine(s);
+            }
+            return isInputCorrect;
+        }
+
+        private static double FindAverage(int sum, int amount)
+        {
+            if (amount == 0)
+            {
+                return 0.0;
+            }
+            return (double)sum / amount;
         }
 
 
         static void Main(string[] args)
         {
-            Console.WriteLine(/* TODO: вывести результат*/);
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            Console.OutputEncoding = Encoding.UTF8;
+            int negativeSum;
+            int negativeAmount;
+            if (!ReadData(out negativeSum, out negativeAmount))
+            {
+                Console.WriteLine("Ошибка");
+                return;
+            }
+            double aver = FindAverage(negativeSum, negativeAmount);
+            if (Math.Abs(aver - (int)aver) < 1e-8)
+            {
+                Console.WriteLine((int)aver);
+                return;
+            }
+            Console.WriteLine($"{aver:.##}");
         }
     }
 }

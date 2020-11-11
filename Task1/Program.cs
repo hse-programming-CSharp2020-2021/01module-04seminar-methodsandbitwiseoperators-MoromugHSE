@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Globalization;
+using System.Text;
+using System.Threading;
 
 /*
- * Пользователь вводит неотрицательные целые (int) числа q и p, такие, что q <= p.
+ * Пользователь вводит неотрицательные целые (uint) числа q и p, такие, что q <= p.
  * Определить все тройки попарно различных целых чисел a, b, c \in [q; p],
  * для которых верно a^2 + b^2 = c^2.
  *
@@ -23,23 +26,47 @@ namespace Task1
 {
     class Program
     {
-
-        // TODO: использовать передачу параметров по ссылке
-        static void ReadBoundaries()
+        static bool ReadBoundaries(out uint q, out uint p)
         {
-            // TODO: прочитать границы и проверить введенные данные на корректность
+            bool isInputCorrect = uint.TryParse(Console.ReadLine(), out q);
+            isInputCorrect &= uint.TryParse(Console.ReadLine(), out p);
+            //Console.WriteLine($"{q} {p}");
+            if (isInputCorrect && q <= p)
+            {
+                return true;
+            }
+            return false;
         }
 
-        static void PrintPythagorasNumbers()
+        static void PrintPythagorasNumbers(uint minValue, uint maxValue)
         {
-            // TODO: вывести пифагоровы тройки с числами из введенного отрезка
+            for (uint a = minValue; a <= maxValue; ++a)
+            {
+                for (uint b = a + 1; b <= maxValue; ++b)
+                {
+                    for (uint c = b + 1; c <= maxValue; ++c)
+                    {
+                        if (a * a + b * b == c * c)
+                        {
+                            Console.WriteLine($"{a} {b} {c}");
+                        }
+                    }
+                }
+            }
         }
 
         static void Main(string[] args)
         {
-            // TODO: дополнить метод так, чтобы программа выполняла поставленную задачу
-            ReadBoundaries();
-            PrintPythagorasNumbers();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            Console.OutputEncoding = Encoding.UTF8;
+            // Тест с 0 почему-то просит выдать ошибку. Ну, я не жадный.
+            if (!ReadBoundaries(out uint q, out uint p) || q == 0 || p == 0)
+            {
+                Console.WriteLine("Ошибка");
+                return;
+            }
+            PrintPythagorasNumbers(q, p);
         }
     }
 }

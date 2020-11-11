@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Globalization;
+using System.Text;
+using System.Threading;
 
 /*
  * На вход подаются три числа: параметры функции a, b, c
@@ -46,9 +49,58 @@ namespace Task3
     class Program
     {
         // TODO: самостоятельно выделите и напишите методы, использующиеся для решения задачи
+        private static bool InputParameters(out double a, out double b, out double c)
+        {
+            bool isInputCorrect = double.TryParse(Console.ReadLine(), out a);
+            isInputCorrect &= double.TryParse(Console.ReadLine(), out b);
+            isInputCorrect &= double.TryParse(Console.ReadLine(), out c);
+
+            return isInputCorrect;
+        }
+
+        private static double EvalFunction(double a, double b, double c, double x)
+        {
+            if (x < 1.2)
+            {
+                return a * x * x + b * x + c;
+            }
+            if (x > 1.2)
+            {
+                return (a + b * x) / Math.Sqrt(x * x + 1);
+            }
+            return a / x + Math.Sqrt(x * x + 1);
+        }
+
+        private static void PrintTabFunction(double a, double b, double c)
+        {
+            for (int i = 0; i < 21; ++i)
+            {
+                double cur = EvalFunction(a, b, c, 1 + 0.05*i);
+                if (Math.Abs(cur - (int)cur) < 1e-8)
+                {
+                    Console.WriteLine((int)cur);
+                }
+                else
+                {
+                    Console.WriteLine($"{cur:.###}");
+                }
+            }
+        }
 
         static void Main(string[] args)
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            Console.OutputEncoding = Encoding.UTF8;
+            double a;
+            double b;
+            double c;
+            if (!InputParameters(out a, out b, out c))
+            {
+                Console.WriteLine("Ошибка");
+                return;
+            }
+            PrintTabFunction(a, b, c);
         }
     }
 }
