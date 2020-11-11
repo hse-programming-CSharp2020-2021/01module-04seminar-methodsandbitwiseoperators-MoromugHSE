@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading;
 using System.Globalization;
+using System.IO;
+using System.Text;
 
 /*
  * Пользователь последовательно вводит целые числа.
@@ -66,6 +68,7 @@ namespace Task2
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            Console.OutputEncoding = Encoding.UTF8;
             int negativeSum;
             int negativeAmount;
             if (!ReadData(out negativeSum, out negativeAmount))

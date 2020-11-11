@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Text;
 using System.Threading;
 
 /*
@@ -58,6 +59,7 @@ namespace Task1
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            Console.OutputEncoding = Encoding.UTF8;
             // Тест с 0 почему-то просит выдать ошибку. Ну, я не жадный.
             if (!ReadBoundaries(out uint q, out uint p) || q == 0 || p == 0)
             {
