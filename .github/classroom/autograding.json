@@ -1,0 +1,204 @@
+{
+  "tests": [
+    {
+      "name": "Task01-Test01",
+      "setup": "csc Task1/Program.cs",
+      "run": "mono Program.exe",
+      "input": "1\r\n10",
+      "output": "3 4 5\r\n6 8 10",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task01-Test02",
+      "setup": "csc Task1/Program.cs",
+      "run": "mono Program.exe",
+      "input": "30\r\n100",
+      "output": "30 40 50\r\n30 72 78\r\n32 60 68\r\n33 44 55\r\n33 56 65\r\n35 84 91\r\n36 48 60\r\n36 77 85\r\n39 52 65\r\n39 80 89\r\n40 42 58\r\n40 75 85\r\n42 56 70\r\n45 60 75\r\n48 55 73\r\n48 64 80\r\n51 68 85\r\n54 72 90\r\n57 76 95\r\n60 63 87\r\n60 80 100\r\n65 72 97",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task01-Test03",
+      "setup": "csc Task1/Program.cs",
+      "run": "mono Program.exe",
+      "input": "-1\r\n17",
+      "output": "Ошибка",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task01-Test04",
+      "setup": "csc Task1/Program.cs",
+      "run": "mono Program.exe",
+      "input": "3\r\n4",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task01-Test05",
+      "setup": "csc Task1/Program.cs",
+      "run": "mono Program.exe",
+      "input": "10\r\n2",
+      "output": "Ошибка",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task02-Test01",
+      "setup": "csc Task2/Program.cs",
+      "run": "mono Program.exe",
+      "input": "1\r\n3\r\n-4\r\n2\r\n-3\r\nq",
+      "output": "-3.5",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task02-Test02",
+      "setup": "csc Task2/Program.cs",
+      "run": "mono Program.exe",
+      "input": "100\r\n-500\r\n-600",
+      "output": "-550",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task02-Test03",
+      "setup": "csc Task2/Program.cs",
+      "run": "mono Program.exe",
+      "input": "444\r\n-43\r\n55\r\n3\r\n87\r\n-94\r\n53\r\n-76\r\n-345\r\n27\r\n-143\r\n-408",
+      "output": "-184.83",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task02-Test04",
+      "setup": "csc Task2/Program.cs",
+      "run": "mono Program.exe",
+      "input": "578\r\n-6\r\nй",
+      "output": "Ошибка",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task02-Test05",
+      "setup": "csc Task2/Program.cs",
+      "run": "mono Program.exe",
+      "input": "4\r\nq",
+      "output": "0",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task03-Test01",
+      "setup": "csc Task3/Program.cs",
+      "run": "mono Program.exe",
+      "input": "1\r\n2\r\n3",
+      "output": "6\r\n6.203\r\n6.41\r\n6.623\r\n2.395\r\n2.186\r\n2.195\r\n2.202\r\n2.209\r\n2.214\r\n2.219\r\n2.223\r\n2.226\r\n2.229\r\n2.231\r\n2.233\r\n2.234\r\n2.235\r\n2.236\r\n2.236\r\n2.236",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task03-Test02",
+      "setup": "csc Task3/Program.cs",
+      "run": "mono Program.exe",
+      "input": "0\r\n0\r\n0",
+      "output": "0\r\n0\r\n0\r\n0\r\n1.562\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0\r\n0",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task03-Test03",
+      "setup": "csc Task3/Program.cs",
+      "run": "mono Program.exe",
+      "input": "10\r\n12\r\n3",
+      "output": "25\r\n26.625\r\n28.3\r\n30.025\r\n9.895\r\n15.617\r\n15.609\r\n15.595\r\n15.577\r\n15.556\r\n15.532\r\n15.505\r\n15.476\r\n15.445\r\n15.413\r\n15.38\r\n15.346\r\n15.312\r\n15.276\r\n15.241\r\n15.205",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task03-Test04",
+      "setup": "csc Task3/Program.cs",
+      "run": "mono Program.exe",
+      "input": "-4\r\n0\r\n1",
+      "output": "-3\r\n-3.41\r\n-3.84\r\n-4.29\r\n-1.771\r\n-2.499\r\n-2.439\r\n-2.381\r\n-2.325\r\n-2.271\r\n-2.219\r\n-2.169\r\n-2.12\r\n-2.073\r\n-2.028\r\n-1.985\r\n-1.943\r\n-1.902\r\n-1.863\r\n-1.825\r\n-1.789",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task03-Test05",
+      "setup": "csc Task3/Program.cs",
+      "run": "mono Program.exe",
+      "input": "1\r\n3.5",
+      "output": "Ошибка",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task04-Test01",
+      "setup": "csc Task4/Program.cs",
+      "run": "mono Program.exe",
+      "input": "2\r\n4",
+      "output": "20",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task04-Test02",
+      "setup": "csc Task4/Program.cs",
+      "run": "mono Program.exe",
+      "input": "20\r\n17",
+      "output": "1179648",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task04-Test03",
+      "setup": "csc Task4/Program.cs",
+      "run": "mono Program.exe",
+      "input": "0\r\n0",
+      "output": "2",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task04-Test04",
+      "setup": "csc Task4/Program.cs",
+      "run": "mono Program.exe",
+      "input": "10000000\r\n20000000",
+      "output": "Переполнение",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "Task04-Test05",
+      "setup": "csc Task4/Program.cs",
+      "run": "mono Program.exe",
+      "input": "4\r\nhi",
+      "output": "Ошибка",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
