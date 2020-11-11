@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Globalization;
 
 /*
  * Пользователь последовательно вводит целые числа.
@@ -35,7 +37,7 @@ namespace Task2
             negativeAmount = negativeSum = 0;
             bool isInputCorrect = true;
             string s = Console.ReadLine();
-            Console.WriteLine(s);
+            //Console.WriteLine(s);
             int cur;
             while (negativeSum >= -1000 && s != "q" && (isInputCorrect &= int.TryParse(s, out cur)))
             {
@@ -45,7 +47,7 @@ namespace Task2
                     negativeSum += cur;
                 }
                 s = Console.ReadLine();
-                Console.WriteLine(s);
+                //Console.WriteLine(s);
             }
             return isInputCorrect;
         }
@@ -62,6 +64,8 @@ namespace Task2
 
         static void Main(string[] args)
         {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("ru-RU");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
             int negativeSum;
             int negativeAmount;
             if (!ReadData(out negativeSum, out negativeAmount))

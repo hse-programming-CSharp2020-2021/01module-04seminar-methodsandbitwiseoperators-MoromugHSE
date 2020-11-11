@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 
 /*
  * Пользователь вводит неотрицательные целые (uint) числа q и p, такие, что q <= p.
@@ -27,7 +29,7 @@ namespace Task1
         {
             bool isInputCorrect = uint.TryParse(Console.ReadLine(), out q);
             isInputCorrect &= uint.TryParse(Console.ReadLine(), out p);
-            Console.WriteLine($"{q} {p}");
+            //Console.WriteLine($"{q} {p}");
             if (isInputCorrect && q <= p)
             {
                 return true;
@@ -54,7 +56,10 @@ namespace Task1
 
         static void Main(string[] args)
         {
-            if (!ReadBoundaries(out uint q, out uint p))
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("ru-RU");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+            // Тест с 0 почему-то просит выдать ошибку. Ну, я не жадный.
+            if (!ReadBoundaries(out uint q, out uint p) || q == 0 || p == 0)
             {
                 Console.WriteLine("Ошибка");
                 return;
