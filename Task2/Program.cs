@@ -36,7 +36,7 @@ namespace Task2
             bool isInputCorrect = true;
             string s = Console.ReadLine();
             int cur;
-            while (s != "q" && (isInputCorrect &= int.TryParse(s, out cur)))
+            while (negativeSum >= -1000 && s != "q" && (isInputCorrect &= int.TryParse(s, out cur)))
             {
                 if (cur < 0)
                 {
@@ -67,7 +67,7 @@ namespace Task2
                 Console.WriteLine("Ошибка");
                 return;
             }
-            Console.WriteLine(FindAverage(negativeSum, negativeAmount));
+            Console.WriteLine($"{FindAverage(negativeSum, negativeAmount):.##}");
         }
     }
 }
