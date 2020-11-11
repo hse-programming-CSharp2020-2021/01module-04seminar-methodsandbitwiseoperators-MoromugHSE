@@ -35,6 +35,7 @@ namespace Task2
             negativeAmount = negativeSum = 0;
             bool isInputCorrect = true;
             string s = Console.ReadLine();
+            Console.WriteLine(s);
             int cur;
             while (negativeSum >= -1000 && s != "q" && (isInputCorrect &= int.TryParse(s, out cur)))
             {
@@ -44,6 +45,7 @@ namespace Task2
                     negativeSum += cur;
                 }
                 s = Console.ReadLine();
+                Console.WriteLine(s);
             }
             return isInputCorrect;
         }

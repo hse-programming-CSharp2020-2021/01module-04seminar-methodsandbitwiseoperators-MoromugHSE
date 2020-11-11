@@ -27,6 +27,7 @@ namespace Task1
         {
             bool isInputCorrect = uint.TryParse(Console.ReadLine(), out q);
             isInputCorrect &= uint.TryParse(Console.ReadLine(), out p);
+            Console.WriteLine($"{q} {p}");
             if (isInputCorrect && q <= p)
             {
                 return true;
