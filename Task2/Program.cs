@@ -76,7 +76,7 @@ namespace Task2
                 Console.WriteLine("Ошибка");
                 return;
             }
-            Console.WriteLine($"{FindAverage(negativeSum, negativeAmount):F2}");
+            Console.WriteLine($"{FindAverage(negativeSum, negativeAmount)}");
         }
     }
 }
