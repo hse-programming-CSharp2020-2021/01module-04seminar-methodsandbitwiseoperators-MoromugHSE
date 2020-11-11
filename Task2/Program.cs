@@ -76,7 +76,13 @@ namespace Task2
                 Console.WriteLine("Ошибка");
                 return;
             }
-            Console.WriteLine($"{FindAverage(negativeSum, negativeAmount)}");
+            double aver = FindAverage(negativeSum, negativeAmount);
+            if (Math.Abs(aver - (int)aver) < 1e-8)
+            {
+                Console.WriteLine((int)aver);
+                return;
+            }
+            Console.WriteLine($"{aver:F2}");
         }
     }
 }
