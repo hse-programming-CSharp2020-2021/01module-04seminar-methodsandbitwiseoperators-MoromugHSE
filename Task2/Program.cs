@@ -82,7 +82,7 @@ namespace Task2
                 Console.WriteLine((int)aver);
                 return;
             }
-            Console.WriteLine($"{aver:F2}");
+            Console.WriteLine($"{aver:.##}");
         }
     }
 }
