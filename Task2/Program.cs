@@ -64,8 +64,8 @@ namespace Task2
 
         static void Main(string[] args)
         {
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("ru-RU");
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             int negativeSum;
             int negativeAmount;
             if (!ReadData(out negativeSum, out negativeAmount))
@@ -73,7 +73,7 @@ namespace Task2
                 Console.WriteLine("Ошибка");
                 return;
             }
-            Console.WriteLine($"{FindAverage(negativeSum, negativeAmount):.##}");
+            Console.WriteLine($"{FindAverage(negativeSum, negativeAmount):F2}");
         }
     }
 }

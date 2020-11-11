@@ -56,8 +56,8 @@ namespace Task1
 
         static void Main(string[] args)
         {
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("ru-RU");
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
             // Тест с 0 почему-то просит выдать ошибку. Ну, я не жадный.
             if (!ReadBoundaries(out uint q, out uint p) || q == 0 || p == 0)
             {
